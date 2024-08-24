@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 public class Jogador extends Entity {
 
     private String nickname;
-    private Rota rotasMain;
+    private Rota rotaMain;
 
-    public Jogador(String nickname, Rota rotasMain) {
+    public Jogador(String nickname, Rota rotaMain) {
         this.nickname = nickname;
-        this.rotasMain = rotasMain;
+        this.rotaMain = rotaMain;
     }
 
     @Override
@@ -22,6 +22,6 @@ public class Jogador extends Entity {
                 this.getClass().getSimpleName(),
                 this.getId(),
                 this.getNickname(),
-                this.getRotasMain().toString());
+                this.getRotaMain().toString());
     }
 }

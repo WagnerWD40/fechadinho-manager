@@ -51,13 +51,13 @@ public class Pick extends Entity {
                 jogador,
                 campeao,
                 rota,
-                Integer.valueOf(fields[4]),
                 Integer.valueOf(fields[5]),
                 Integer.valueOf(fields[6]),
                 Integer.valueOf(fields[7]),
                 Integer.valueOf(fields[8]),
                 Integer.valueOf(fields[9]),
-                Integer.valueOf(fields[10])
+                Integer.valueOf(fields[10]),
+                Integer.valueOf(fields[11])
         );
     }
 }

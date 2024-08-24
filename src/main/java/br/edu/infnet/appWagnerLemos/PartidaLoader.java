@@ -76,9 +76,19 @@ public class PartidaLoader implements ApplicationRunner {
             }
 
             if (infoType.equals("P")) {
-                Jogador jogador = conhecidoService.getById(Long.valueOf(fields[1]));
-                Campeao campeao = campeaoService.getById(Long.valueOf(fields[2]));
-                Rota rota = rotaService.getById(Long.valueOf(fields[3]));
+
+                Jogador jogador = new Jogador();
+
+                if (fields[1].equals("C")) {
+                    jogador = conhecidoService.getById(Long.valueOf(fields[2]));
+                }
+
+                if (fields[1].equals("G")) {
+                    jogador = convidadoService.getById(Long.valueOf(fields[2]));
+                }
+
+                Campeao campeao = campeaoService.getById(Long.valueOf(fields[3]));
+                Rota rota = rotaService.getById(Long.valueOf(fields[4]));
 
                 Pick pick = Pick.fromFile(fields, jogador, campeao, rota);
                 currentEquipe.getPicks().add(pick);

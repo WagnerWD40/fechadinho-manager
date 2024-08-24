@@ -1,8 +1,10 @@
 package br.edu.infnet.appWagnerLemos.domain.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Rota extends Entity {
 
     public String nome;

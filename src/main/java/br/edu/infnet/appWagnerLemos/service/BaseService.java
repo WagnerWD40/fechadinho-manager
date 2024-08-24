@@ -11,13 +11,15 @@ public class BaseService<T extends Entity> {
     protected Map<Long, T> map = new HashMap<>();
     private Long id = 0L;
 
-    public void create(T model) {
+    public T create(T model) {
         Long newId = id + 1L;
         model.setId(newId);
 
         map.put(model.getId(), model);
 
         this.id = newId;
+
+        return model;
     }
 
     public Collection<T> getList() {
@@ -30,5 +32,9 @@ public class BaseService<T extends Entity> {
         }
 
         throw new RuntimeException("Chave não encontrada: '" + id + "'");
+    }
+
+    public void delete(Long id) {
+        map.remove(id);
     }
 }
