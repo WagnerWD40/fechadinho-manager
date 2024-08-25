@@ -8,7 +8,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/convidado")
-public class ConvidadoController extends ResourceController<Convidado> {
+public class ConvidadoController implements ResourceController<Convidado> {
 
     private final ConvidadoService convidadoService;
 
