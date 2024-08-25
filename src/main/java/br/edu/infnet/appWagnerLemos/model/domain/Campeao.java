@@ -1,11 +1,16 @@
-package br.edu.infnet.appWagnerLemos.domain.model;
+package br.edu.infnet.appWagnerLemos.model.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @NoArgsConstructor
-public class Campeao extends Entity {
+@Table(name = "campeao")
+@Entity
+public class Campeao extends ModelEntity {
 
     private String nome;
     private Integer idRiot;

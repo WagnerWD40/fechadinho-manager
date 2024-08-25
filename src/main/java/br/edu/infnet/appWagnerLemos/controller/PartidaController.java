@@ -1,14 +1,15 @@
 package br.edu.infnet.appWagnerLemos.controller;
 
-import br.edu.infnet.appWagnerLemos.domain.model.Partida;
-import br.edu.infnet.appWagnerLemos.service.PartidaService;
+import br.edu.infnet.appWagnerLemos.model.domain.Partida;
+import br.edu.infnet.appWagnerLemos.model.service.PartidaService;
+import jakarta.servlet.http.Part;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 @RestController
 @RequestMapping("/partida")
-public class PartidaController {
+public class PartidaController implements ResourceController<Partida> {
 
     private PartidaService partidaService;
 
@@ -27,10 +28,8 @@ public class PartidaController {
     }
 
     @PostMapping
-    public String create(@RequestBody Partida partida) {
-        partidaService.create(partida);
-
-        return "Partida criada com sucesso";
+    public Partida create(@RequestBody Partida partida) {
+        return partidaService.create(partida);
     }
 
     @DeleteMapping ("/{id}")

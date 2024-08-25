@@ -1,1 +1,4 @@
-Thug;4;Amigo do Pablo
+Thug;4;Amigo do Pablo;Esmeralda
+LordPauloBomba;1;Amigo do Moisés;Bronze
+Nikito;3;Amigo do Moisés;Prata
+Tunga;2;Amigo do Arbola;Platina

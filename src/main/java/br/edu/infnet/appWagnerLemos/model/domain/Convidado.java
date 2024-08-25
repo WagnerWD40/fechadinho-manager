@@ -1,5 +1,7 @@
-package br.edu.infnet.appWagnerLemos.domain.model;
+package br.edu.infnet.appWagnerLemos.model.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,12 +9,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Convidado extends Jogador {
     private String origemContato;
+    private String rankSolo;
 
-    public Convidado(String nickname, Rota rotasMain, String origemContato) {
+    public Convidado(String nickname, Rota rotasMain, String origemContato, String rankSolo) {
         super(nickname, rotasMain);
         this.origemContato = origemContato;
+        this.rankSolo = rankSolo;
     }
 
     @Override
@@ -26,7 +31,8 @@ public class Convidado extends Jogador {
         return new Convidado(
                 fields[0],
                 rota,
-                fields[2]
+                fields[2],
+                fields[3]
         );
     }
 }

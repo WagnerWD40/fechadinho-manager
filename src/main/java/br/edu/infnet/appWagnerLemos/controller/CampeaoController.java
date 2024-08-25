@@ -1,40 +1,41 @@
 package br.edu.infnet.appWagnerLemos.controller;
 
-import br.edu.infnet.appWagnerLemos.domain.model.Campeao;
-import br.edu.infnet.appWagnerLemos.service.CampeaoService;
+import br.edu.infnet.appWagnerLemos.model.domain.Campeao;
+import br.edu.infnet.appWagnerLemos.model.service.CampeaoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 @RestController
 @RequestMapping("/campeao")
-public class CampeaoController {
+public class CampeaoController implements ResourceController<Campeao> {
 
-    private CampeaoService campeaoService;
+    private final CampeaoService campeaoService;
 
     public CampeaoController(CampeaoService campeaoService) {
         this.campeaoService = campeaoService;
     }
 
-    @GetMapping("/listar")
+
+    @Override
     public Collection<Campeao> getList() {
         return campeaoService.getList();
     }
 
-    @GetMapping("/{id}")
-    public Campeao getById(@PathVariable Long id) {
+    @Override
+    public Campeao getById(Long id) {
         return campeaoService.getById(id);
     }
 
-    @PostMapping
-    public Campeao create(@RequestBody Campeao campeao) {
+    @Override
+    public Campeao create(Campeao campeao) {
         return campeaoService.create(campeao);
     }
 
-    @DeleteMapping ("/{id}")
-    public String delete(@PathVariable Long id) {
+    @Override
+    public String delete(Long id) {
         campeaoService.delete(id);
 
-        return "Sucesso";
+        return "Campeão criado com sucesso!";
     }
 }

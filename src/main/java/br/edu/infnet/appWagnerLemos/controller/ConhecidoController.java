@@ -1,16 +1,14 @@
 package br.edu.infnet.appWagnerLemos.controller;
 
-import br.edu.infnet.appWagnerLemos.domain.model.Conhecido;
-import br.edu.infnet.appWagnerLemos.domain.model.Partida;
-import br.edu.infnet.appWagnerLemos.service.ConhecidoService;
-import br.edu.infnet.appWagnerLemos.service.PartidaService;
+import br.edu.infnet.appWagnerLemos.model.domain.Conhecido;
+import br.edu.infnet.appWagnerLemos.model.service.ConhecidoService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
 @RestController
 @RequestMapping("/conhecido")
-public class ConhecidoController {
+public class ConhecidoController implements ResourceController<Conhecido> {
 
     private ConhecidoService conhecidoService;
 
@@ -29,10 +27,8 @@ public class ConhecidoController {
     }
 
     @PostMapping
-    public String create(@RequestBody Conhecido conhecido) {
-        conhecidoService.create(conhecido);
-
-        return "Conhecido criado com sucesso";
+    public Conhecido create(@RequestBody Conhecido conhecido) {
+        return conhecidoService.create(conhecido);
     }
 
     @DeleteMapping ("/{id}")

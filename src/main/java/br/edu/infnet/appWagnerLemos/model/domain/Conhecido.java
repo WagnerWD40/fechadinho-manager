@@ -1,5 +1,7 @@
-package br.edu.infnet.appWagnerLemos.domain.model;
+package br.edu.infnet.appWagnerLemos.model.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Conhecido extends Jogador {
     private String nome;
     private String discord;

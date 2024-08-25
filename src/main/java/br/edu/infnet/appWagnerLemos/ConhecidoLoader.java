@@ -1,10 +1,9 @@
 package br.edu.infnet.appWagnerLemos;
 
-import br.edu.infnet.appWagnerLemos.domain.model.Campeao;
-import br.edu.infnet.appWagnerLemos.domain.model.Conhecido;
-import br.edu.infnet.appWagnerLemos.domain.model.Rota;
-import br.edu.infnet.appWagnerLemos.service.ConhecidoService;
-import br.edu.infnet.appWagnerLemos.service.RotaService;
+import br.edu.infnet.appWagnerLemos.model.domain.Conhecido;
+import br.edu.infnet.appWagnerLemos.model.domain.Rota;
+import br.edu.infnet.appWagnerLemos.model.service.ConhecidoService;
+import br.edu.infnet.appWagnerLemos.model.service.RotaService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;

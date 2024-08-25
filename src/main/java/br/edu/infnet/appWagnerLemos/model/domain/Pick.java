@@ -1,14 +1,24 @@
-package br.edu.infnet.appWagnerLemos.domain.model;
+package br.edu.infnet.appWagnerLemos.model.domain;
 
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class Pick extends Entity {
+@Entity
+@Table(name = "pick")
+public class Pick extends ModelEntity {
+
+    @ManyToOne
     private Jogador jogador;
+
+    @ManyToOne
     private Campeao campeao;
+
+    @ManyToOne
     private Rota rota;
+
     private Integer abates;
     private Integer mortes;
     private Integer assistencias;

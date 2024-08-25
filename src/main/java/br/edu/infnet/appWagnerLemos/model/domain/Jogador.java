@@ -1,14 +1,19 @@
-package br.edu.infnet.appWagnerLemos.domain.model;
+package br.edu.infnet.appWagnerLemos.model.domain;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Jogador extends Entity {
+@Entity
+@Table(name = "jogador")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Jogador extends ModelEntity {
 
     private String nickname;
+
+    @ManyToOne
     private Rota rotaMain;
 
     public Jogador(String nickname, Rota rotaMain) {

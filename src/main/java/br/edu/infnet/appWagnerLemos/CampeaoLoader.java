@@ -1,7 +1,7 @@
 package br.edu.infnet.appWagnerLemos;
 
-import br.edu.infnet.appWagnerLemos.domain.model.Campeao;
-import br.edu.infnet.appWagnerLemos.service.CampeaoService;
+import br.edu.infnet.appWagnerLemos.model.domain.Campeao;
+import br.edu.infnet.appWagnerLemos.model.service.CampeaoService;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;

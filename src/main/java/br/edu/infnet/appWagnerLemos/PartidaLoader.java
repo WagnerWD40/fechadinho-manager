@@ -1,7 +1,9 @@
 package br.edu.infnet.appWagnerLemos;
 
-import br.edu.infnet.appWagnerLemos.domain.model.*;
-import br.edu.infnet.appWagnerLemos.service.*;
+import br.edu.infnet.appWagnerLemos.model.domain.*;
+import br.edu.infnet.appWagnerLemos.model.service.*;
+
+import jakarta.transaction.Transactional;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -13,7 +15,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 
 @Order(5)
 @Component
@@ -40,6 +41,7 @@ public class PartidaLoader implements ApplicationRunner {
     }
 
     @Override
+    @Transactional
     public void run(ApplicationArguments args) throws Exception {
         FileReader file = new FileReader(FILENAME);
         BufferedReader reader = new BufferedReader(file);
@@ -48,8 +50,6 @@ public class PartidaLoader implements ApplicationRunner {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-        ArrayList<Partida> partidas = new ArrayList<>();
-        Integer currentPartidaIndex = 0;
         Partida currentPartida = new Partida();
         Equipe currentEquipe = new Equipe();
 
@@ -77,7 +77,7 @@ public class PartidaLoader implements ApplicationRunner {
 
             if (infoType.equals("P")) {
 
-                Jogador jogador = new Jogador();
+                Jogador jogador = null;
 
                 if (fields[1].equals("C")) {
                     jogador = conhecidoService.getById(Long.valueOf(fields[2]));
@@ -91,10 +91,12 @@ public class PartidaLoader implements ApplicationRunner {
                 Rota rota = rotaService.getById(Long.valueOf(fields[4]));
 
                 Pick pick = Pick.fromFile(fields, jogador, campeao, rota);
+                pick = pickService.create(pick);
                 currentEquipe.getPicks().add(pick);
             }
 
             if (currentEquipe.getPicks().size() == 5) {
+                currentEquipe = equipeService.create(currentEquipe);
                 currentPartida.getEquipes().add(currentEquipe);
                 currentEquipe = new Equipe();
             }
