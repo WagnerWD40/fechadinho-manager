@@ -2,6 +2,7 @@ package br.edu.infnet.appWagnerLemos.controller;
 
 import br.edu.infnet.appWagnerLemos.model.domain.Conhecido;
 import br.edu.infnet.appWagnerLemos.model.service.ConhecidoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -10,31 +11,36 @@ import java.util.Collection;
 @RequestMapping("/conhecido")
 public class ConhecidoController implements ResourceController<Conhecido> {
 
-    private ConhecidoService conhecidoService;
+    private final ConhecidoService conhecidoService;
 
     public ConhecidoController(ConhecidoService conhecidoService) {
         this.conhecidoService = conhecidoService;
     }
 
-    @GetMapping(value = "/listar")
+    @Override
     public Collection<Conhecido> getList() {
         return conhecidoService.getList();
     }
 
-    @GetMapping(value = "/{id}")
+    @Override
     public Conhecido getById(@PathVariable Long id) {
         return conhecidoService.getById(id);
     }
 
-    @PostMapping
+    @Override
+    public Long getTotal() {
+        return conhecidoService.getQuantidade();
+    }
+
+    @Override
     public Conhecido create(@RequestBody Conhecido conhecido) {
         return conhecidoService.create(conhecido);
     }
 
-    @DeleteMapping ("/{id}")
-    public String delete(@PathVariable Long id) {
+    @Override
+    public ResponseEntity<String> delete(@PathVariable Long id) {
         conhecidoService.delete(id);
 
-        return "Sucesso";
+        return ResponseEntity.noContent().build();
     }
 }

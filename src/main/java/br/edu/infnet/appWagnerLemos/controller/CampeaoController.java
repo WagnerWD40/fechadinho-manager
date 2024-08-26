@@ -2,6 +2,7 @@ package br.edu.infnet.appWagnerLemos.controller;
 
 import br.edu.infnet.appWagnerLemos.model.domain.Campeao;
 import br.edu.infnet.appWagnerLemos.model.service.CampeaoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -28,14 +29,19 @@ public class CampeaoController implements ResourceController<Campeao> {
     }
 
     @Override
+    public Long getTotal() {
+        return campeaoService.getQuantidade();
+    }
+
+    @Override
     public Campeao create(Campeao campeao) {
         return campeaoService.create(campeao);
     }
 
     @Override
-    public String delete(Long id) {
+    public ResponseEntity<String> delete(Long id) {
         campeaoService.delete(id);
 
-        return "Campeão criado com sucesso!";
+        return ResponseEntity.noContent().build();
     }
 }

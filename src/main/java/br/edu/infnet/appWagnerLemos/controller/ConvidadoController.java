@@ -2,6 +2,7 @@ package br.edu.infnet.appWagnerLemos.controller;
 
 import br.edu.infnet.appWagnerLemos.model.domain.Convidado;
 import br.edu.infnet.appWagnerLemos.model.service.ConvidadoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -16,25 +17,30 @@ public class ConvidadoController implements ResourceController<Convidado> {
         this.convidadoService = convidadoService;
     }
 
-    @GetMapping(value = "/listar")
+    @Override
     public Collection<Convidado> getList() {
         return convidadoService.getList();
     }
 
-    @GetMapping(value = "/{id}")
+    @Override
     public Convidado getById(@PathVariable Long id) {
         return convidadoService.getById(id);
     }
 
-    @PostMapping
+    @Override
+    public Long getTotal() {
+        return convidadoService.getQuantidade();
+    }
+
+    @Override
     public Convidado create(@RequestBody Convidado convidado) {
         return convidadoService.create(convidado);
     }
 
-    @DeleteMapping ("/{id}")
-    public String delete(@PathVariable Long id) {
+    @Override
+    public ResponseEntity<String> delete(@PathVariable Long id) {
         convidadoService.delete(id);
 
-        return "Sucesso";
+        return ResponseEntity.noContent().build();
     }
 }

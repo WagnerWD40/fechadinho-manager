@@ -10,13 +10,13 @@ import lombok.*;
 @Table(name = "pick")
 public class Pick extends ModelEntity {
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Jogador jogador;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Campeao campeao;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Rota rota;
 
     private Integer abates;
