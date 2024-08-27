@@ -11,4 +11,5 @@ public class EquipeService extends BaseService<Equipe, EquipeRepository> {
     public EquipeService(CrudRepository<Equipe, Long> repository) {
         super(repository);
     }
+
 }

@@ -1,5 +1,6 @@
 package br.edu.infnet.appWagnerLemos.model.domain;
 
+import br.edu.infnet.appWagnerLemos.model.dto.PickDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,13 +11,13 @@ import lombok.*;
 @Table(name = "pick")
 public class Pick extends ModelEntity {
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Jogador jogador;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Campeao campeao;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     private Rota rota;
 
     private Integer abates;
@@ -69,5 +70,9 @@ public class Pick extends ModelEntity {
                 Integer.valueOf(fields[10]),
                 Integer.valueOf(fields[11])
         );
+    }
+
+    public static Pick fromDto(Jogador jogador, Rota rota, Campeao campeao, PickDto pickDto) {
+        return new Pick(jogador, campeao, rota, pickDto.getAbates(), pickDto.getMortes(), pickDto.getAssistencias(), pickDto.getDanoCausado(), pickDto.getDanoRecebido(), pickDto.getGold(), pickDto.getCs());
     }
 }
