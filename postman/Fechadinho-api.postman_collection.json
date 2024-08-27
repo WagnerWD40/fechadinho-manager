@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "567d4b4e-9993-4193-8215-c2e27f73ee84",
+		"name": "Fechadinho-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8697884"
+	},
+	"item": [
+		{
+			"name": "Campeao",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/campeao/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campeao",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Annie\",\n    \"idRiot\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/campeao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campeao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/campeao/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campeao",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/campeao/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campeao",
+								"total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/campeao/169",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"campeao",
+								"169"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Conhecido",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/conhecido/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conhecido",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nickname\": \"Nostalgyah\",\n    \"rotaMain\": {\n        \"id\": 2,\n        \"nome\": \"Jungle\"\n    },\n    \"nome\": \"Moisés\",\n    \"discord\": \"Verdadeiros Lobos\",\n    \"whatsapp\": \"99 99999-9999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/conhecido",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conhecido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/conhecido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conhecido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/conhecido/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conhecido",
+								"total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/conhecido/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conhecido",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Convidado",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convidado/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convidado",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nickname\": \"Thug\",\n    \"rotaMain\": {\n        \"id\": 4,\n        \"nome\": \"ADC\"\n    },\n    \"origemContato\": \"Amigo do Pablo\",\n    \"rankSolo\": \"Esmeralda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/convidado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convidado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convidado/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convidado",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convidado/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convidado",
+								"total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convidado/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convidado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Partida",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/partida/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"partida",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"equipes\": [\n        {\n            \"picks\": [\n                {\n                    \"conhecidoId\": 1,\n                    \"campeao\": 86,\n                    \"rota\": 1,\n                    \"abates\": 4,\n                    \"mortes\": 6,\n                    \"assistencias\": 8,\n                    \"danoCausado\": 27477,\n                    \"danoRecebido\": 55897,\n                    \"gold\": 12375,\n                    \"cs\": 208\n                },\n                {\n                    \"conhecidoId\": 2,\n                    \"campeao\": 124,\n                    \"rota\": 2,\n                    \"abates\": 2,\n                    \"mortes\": 3,\n                    \"assistencias\": 11,\n                    \"danoCausado\": 32862,\n                    \"danoRecebido\": 53847,\n                    \"gold\": 12375,\n                    \"cs\": 336\n                },\n                {\n                    \"conhecidoId\": 3,\n                    \"campeao\": 89,\n                    \"rota\": 3,\n                    \"abates\": 11,\n                    \"mortes\": 5,\n                    \"assistencias\": 3,\n                    \"danoCausado\": 45862,\n                    \"danoRecebido\": 43807,\n                    \"gold\": 12375,\n                    \"cs\": 325\n                },\n                {\n                    \"conhecidoId\": 4,\n                    \"campeao\": 144,\n                    \"rota\": 4,\n                    \"abates\": 10,\n                    \"mortes\": 6,\n                    \"assistencias\": 8,\n                    \"danoCausado\": 33286,\n                    \"danoRecebido\": 37907,\n                    \"gold\": 12375,\n                    \"cs\": 319\n                },\n                {\n                    \"conhecidoId\": 5,\n                    \"campeao\": 118,\n                    \"rota\": 5,\n                    \"abates\": 0,\n                    \"mortes\": 2,\n                    \"assistencias\": 15,\n                    \"danoCausado\": 55364,\n                    \"danoRecebido\": 39512,\n                    \"gold\": 12375,\n                    \"cs\": 94\n                }\n            ],\n            \"side\": \"B\",\n            \"dragao\": 2,\n            \"barao\": 1,\n            \"herald\": 1,\n            \"grub\": 3,\n            \"torre\": 9,\n            \"inibidor\": 2\n        },\n        {\n            \"picks\": [\n                {\n                    \"conhecidoId\": 6,\n                    \"campeao\": 143,\n                    \"rota\": 1,\n                    \"abates\": 10,\n                    \"mortes\": 3,\n                    \"assistencias\": 5,\n                    \"danoCausado\": 28838,\n                    \"danoRecebido\": 54938,\n                    \"gold\": 12375,\n                    \"cs\": 256\n                },\n                {\n                    \"conhecidoId\": 7,\n                    \"campeao\": 137,\n                    \"rota\": 2,\n                    \"abates\": 10,\n                    \"mortes\": 9,\n                    \"assistencias\": 8,\n                    \"danoCausado\": 27435,\n                    \"danoRecebido\": 50161,\n                    \"gold\": 12375,\n                    \"cs\": 226\n                },\n                {\n                    \"conhecidoId\": 8,\n                    \"campeao\": 103,\n                    \"rota\": 3,\n                    \"abates\": 10,\n                    \"mortes\": 5,\n                    \"assistencias\": 14,\n                    \"danoCausado\": 36498,\n                    \"danoRecebido\": 41335,\n                    \"gold\": 12375,\n                    \"cs\": 269\n                },\n                {\n                    \"conhecidoId\": 9,\n                    \"campeao\": 109,\n                    \"rota\": 4,\n                    \"abates\": 3,\n                    \"mortes\": 5,\n                    \"assistencias\": 17,\n                    \"danoCausado\": 31115,\n                    \"danoRecebido\": 32114,\n                    \"gold\": 12375,\n                    \"cs\": 246\n                },\n                {\n                    \"conhecidoId\": 10,\n                    \"campeao\": 127,\n                    \"rota\": 5,\n                    \"abates\": 10,\n                    \"mortes\": 11,\n                    \"assistencias\": 14,\n                    \"danoCausado\": 61627,\n                    \"danoRecebido\": 68877,\n                    \"gold\": 12375,\n                    \"cs\": 194\n                }\n            ],\n            \"side\": \"R\",\n            \"dragao\": 4,\n            \"barao\": 2,\n            \"herald\": 1,\n            \"grub\": 3,\n            \"torre\": 11,\n            \"inibidor\": 1\n        }\n    ],\n    \"vitoriaTimeAzul\": false,\n    \"data\": \"2024-10-08\",\n    \"duracao\": \"00:32:25\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/partida",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"partida"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/partida/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"partida",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get total",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/partida/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"partida",
+								"total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/partida/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"partida",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
